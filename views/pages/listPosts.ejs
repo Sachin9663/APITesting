@@ -1,0 +1,25 @@
+<html>
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
+    <%- include('../templates/head') -%>
+    <body>
+        <h1>All Posts</h1>
+        <table>
+            <tr>
+                <th>id</th>
+                <th>Post data</th>
+                <th>Category</th>
+                <th>Created At</th>
+            </tr>
+            <tbody>
+                <%posts.forEach(post => {%>
+                    <tr>
+                        <td><%=post.id%></td>
+                        <td><%=post.postData%></td>
+                        <td><%=post.Category%></td>
+                        <td><%=post.createdAt%></td>
+                    </tr>
+                <%});%>
+            </tbody>
+        </table>
+    </body>
+</html>
