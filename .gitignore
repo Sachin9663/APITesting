@@ -3,3 +3,6 @@
 
 #keys
 /config/keys.js
+
+# env
+/.env
