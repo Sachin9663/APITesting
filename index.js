@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+require('dotenv').config()
 
 const posts = require('./posts')
 const utils = require('./utils/postSchema')
@@ -8,6 +9,8 @@ const utils = require('./utils/postSchema')
 app.use(express.json());
 
 const Port = process.env.PORT || 8080
+const HOST = '0.0.0.0';
+
 
 // view engine setup
 
@@ -97,8 +100,8 @@ app.delete('/api/posts/:id', (req, res)=>{
 })
 
 
-app.listen(Port, ()=>{
-    console.log(`Server listening at port ${Port}`)
+app.listen(Port,HOST, ()=>{
+    console.log(`Running on http://${HOST}:${Port}`)
 })
 
 module.exports = app;
